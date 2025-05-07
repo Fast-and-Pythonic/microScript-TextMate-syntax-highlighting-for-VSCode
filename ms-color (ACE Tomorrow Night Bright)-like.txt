@@ -1,0 +1,174 @@
+"editor.tokenColorCustomizations": {
+    "textMateRules": [
+        
+        // Comments
+        {
+            "name": "Comments ms",
+            "scope": [
+                "comment.line.double-slash.ms",
+                "comment.block.ms"
+            ],
+            "settings": {
+                "foreground": "#999999",
+                "fontStyle": "italic"
+            }
+        },
+        //----------------------------------------
+        
+        
+        
+        // Keywords:
+        
+        {
+            // local, global
+            "name": "local global Modifiers",
+            "scope": "storage.modifier.declaration.ms",
+            "settings": {
+                "foreground": "#ff8742",
+                "fontStyle": "italic"
+            }
+        },
+        
+        {
+            // All Keywords Control
+            "name": "Keyword Control",
+            "scope": [
+                
+                // end, return
+                "keyword.control.ms",
+                
+                // if, elsif, else, then
+                "keyword.control.conditional.ms",
+                
+                // while, for, to, by, in, break, continue
+                "keyword.control.loop.ms",
+                
+                // new
+                "keyword.control.new.ms",
+                
+                // do, after, every, sleep
+                "keyword.control.schedule.ms",
+                
+                // function()
+                "keyword.declaration.function.ms"
+                
+            ],
+            "settings": {
+                "foreground": "#e280ffe3"
+            }
+        },
+        //----------------------------------------
+        
+        
+        
+        // Object Oriented Programming:
+        
+        {
+            // object, class, constructor
+            "name": "Storage type OOP tools",
+            "scope": [
+                "storage.type.object.ms",
+                "storage.type.class.ms",
+                "storage.type.constructor.ms"
+            ],
+            "settings": {
+                "foreground": "#E9A745",
+                "fontStyle": "bold"
+            }
+        },
+        
+        {
+            // extends
+            "name": "Storage Modifier extends",
+            "scope": "storage.modifier.extends.ms",
+            "settings": {
+                "foreground": "#FF8742",
+                "fontStyle": "italic"
+            }
+        },
+        
+        {
+            // super()
+            "name": "Method super",
+            "scope": "variable.language.super.ms",
+            "settings": {
+                "foreground": "#E3B560",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            // this.
+            "name": "Link this",
+            "scope": "variable.language.this.ms",
+            "settings": {
+                "foreground": "#E3B560",
+                "fontStyle": "italic"
+            }
+        },
+        //----------------------------------------
+        
+        
+        
+        {
+            "name": "Number",
+            "scope": "constant.numeric.ms",
+            "settings": {
+                "foreground": "#FFA259"
+            }
+        },
+        {
+            "name": "Boolean",
+            "scope": "constant.language.boolean.ms",
+            "settings": {
+                "foreground": "#FFA259"
+            }
+        },
+        
+        
+        
+        {
+            "name": "String",
+            "scope": [
+                "string.quoted.double.ms",
+                "string.quoted.single.ms"
+            ],
+            "settings": {
+                "foreground": "#7FC974"
+            }
+        },
+        
+        
+        
+        {
+            "name": "Parameter",
+            "scope": [
+                "variable.parameter.ms",
+                
+                "variable.parameter.func-declar.func-bracket-single-param",
+                "variable.parameter.func-declar.func-bracket-param,",
+                
+                "variable.parameter.func-declar.param,",
+                "variable.parameter.func-declar.last-param",
+                
+                "variable.parameter.func-call.param="
+            ],
+            "settings": {
+                "foreground": "#e86363f1"
+            }
+        },
+        
+        
+        
+        
+        // Built-in library
+        {
+            "name": "",
+            "scope": "",
+            "settings": {
+                
+            }
+        },
+        
+        
+    ]
+},
