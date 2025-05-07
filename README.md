@@ -22,8 +22,11 @@ Added code highlighting for:
 - Mathematical operators:
 
 = + - * / % ^
+
 += -= *= /= %=
+
 == != <= >=
+
 & | << >>
 
 - Numbers
