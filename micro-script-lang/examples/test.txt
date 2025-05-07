@@ -1,0 +1,15 @@
+obj = new Test_class(a=5, B=2, a==5, U==8, v, W)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

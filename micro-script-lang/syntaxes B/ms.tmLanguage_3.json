@@ -1,0 +1,62 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "MicroScript Programming Language",
+	"patterns": [
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#function"
+		},
+		{
+			"include": "#string"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#label"
+		},
+		{
+			"include": "#keyword"
+		},
+		{
+			"include": "#support"
+		},
+		{
+			"include": "#storage"
+		},
+		{
+			"include": "#variable"
+		},
+		{
+			"include": "#constant"
+		},
+		{
+			"include": "#entity"
+		},
+		{
+			"include": "#meta"
+		}
+	],
+	"repository": {
+		"keyword": {
+			"patterns": [{
+				"name": "keyword.control.ms",
+				"match": "\\b(if|while|for|return)\\b"
+			}]
+		},
+		"string": {
+			"name": "string.quoted.double.ms",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ms",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.ms"
+}
