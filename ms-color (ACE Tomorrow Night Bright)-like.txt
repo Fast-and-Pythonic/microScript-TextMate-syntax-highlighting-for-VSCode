@@ -172,3 +172,31 @@
         
     ]
 },
+
+
+
+
+
+"workbench.colorCustomizations": {
+    // "editorLineNumber.foreground": "#adadad",
+    // "editor.background": "#0c0c08",
+    // "editor.background": "#080808",
+    "editor.background": "#080800",
+    // "editor.background": "#090900",
+    
+    "editor.foreground": "#cfc9c2",
+    // "editor.foreground": "#bd4c44",
+    // "editorCursor.foreground": "#949494",
+    
+    // "editor.lineHighlightBackground": "#0d0d09",
+    // "editor.wordHighlightBackground": "#ffffff16",
+    // "editor.selectionBackground": "#162b11",
+    // "editor.selectionHighlightBackground": "#132e0d",
+    
+    // "editor.selectionHighlightBackground": "#132e0d",
+    // "editor.selectionHighlightBorder": "#132e0d",
+    
+    // "scrollbarSlider.background": "#16c00033",
+    // "scrollbarSlider.hoverBackground": "#23c00854",
+    // "scrollbarSlider.activeBackground": "#2b981861",
+},
