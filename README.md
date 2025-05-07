@@ -20,6 +20,7 @@ Added code highlighting for:
   - do, after, every, sleep
 
 - Mathematical operators:
+
 = + - * / % ^
 += -= *= /= %=
 == != <= >=
