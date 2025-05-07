@@ -6,7 +6,7 @@ In the file "ms-color (ACE Tomorrow Night Bright)-like.jsonc" there is a custom 
 
 ---
 
-Code highlighting has been done:
+Added code highlighting for:
 
 - Keywords:
   - local, global
