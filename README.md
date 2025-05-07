@@ -8,6 +8,8 @@ In the file "ms-color (ACE Tomorrow Night Bright)-like.jsonc" there is a custom 
 
 Added code highlighting for:
 
+- Comments
+
 - Keywords:
   - local, global
   - end, return
@@ -35,7 +37,7 @@ Added code highlighting for:
 
 - In brackets of functions and classes:
   - Named parameters
-  - and all the other stuff
+  - and all the other stuff (comments, keywords, math operators, numbers, booleans, strings)
 
 - Variable names ARE NOT HIGHLIGHTED
 
