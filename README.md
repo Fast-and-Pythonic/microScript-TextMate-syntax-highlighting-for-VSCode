@@ -44,7 +44,17 @@ Added code highlighting for:
 
 ---
 
-<summary>Click to expand spoiler</summary>
+<details> <summary>Click to expand spoiler</summary>
+
+Here you can put **any markdown content**, including:
+
+- Text
+- Images: ![alt text](image-url)
+- Code blocks:
+
+
+</details>
+
 
 ---
 
