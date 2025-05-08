@@ -1,0 +1,142 @@
+{
+    "name": "MicroScript",
+    "scopeName": "source.ms",
+    "fileTypes": [
+        "ms"
+    ],
+    "patterns": [
+        { "include": "#keywords" },
+        { "include": "#variables" },
+        { "include": "#numbers" },
+        { "include": "#booleans" },
+        { "include": "#strings" },
+        { "include": "#operators" },
+        { "include": "#functions" },
+        { "include": "#comments" }
+    ],
+    "repository": {
+        "variables": {
+            "patterns": [
+                {
+                    "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b(?=\\s*=\\s*(?!\\b(?:function|object|class|new)\\b))",
+                    "name": "variable.other.ms"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "beginCaptures": {
+                        "0": { "name": "punctuation.definition.string.begin.ms" }
+                    },
+                    "end": "\"",
+                    "endCaptures": {
+                        "0": { "name": "punctuation.definition.string.end.ms" }
+                    },
+                    "name": "string.quoted.double.ms",
+                    "patterns": [
+                        {
+                            "match": "\\\\.",
+                            "name": "constant.character.escape.ms"
+                        }
+                    ]
+                },
+                {
+                    "begin": "'",
+                    "beginCaptures": {
+                        "0": { "name": "punctuation.definition.string.begin.ms" }
+                    },
+                    "end": "'",
+                    "endCaptures": {
+                        "0": { "name": "punctuation.definition.string.end.ms" }
+                    },
+                    "name": "string.quoted.single.ms",
+                    "patterns": [
+                        {
+                            "match": "\\\\.",
+                            "name": "constant.character.escape.ms"
+                        }
+                    ]
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "\\b\\d+\\.?\\d*\\b",
+                    "name": "constant.numeric.ms"
+                }
+            ]
+        },
+        "booleans": {
+            "patterns": [
+                {
+                    "match": "\\b(?:true|false)\\b",
+                    "name": "constant.language.boolean.ms"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "match": "\\b(?:local|global|if|then|else|for|to|in|while|do|function|object|class|extends|end|return)\\b",
+                    "name": "keyword.control.ms"
+                }
+            ]
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\s*(?=\\()",
+                    "name": "entity.name.function.ms"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "match": "(?:[+\\-]|/(?![*/])|[*%\\^])",
+                    "name": "keyword.operator.arithmetic.ms"
+                },
+                {
+                    "match": "==|!=|<|>|<=|>=",
+                    "name": "keyword.operator.comparison.ms"
+                },
+                {
+                    "match": "=",
+                    "name": "keyword.operator.assignment.ms"
+                },
+                {
+                    "match": "(?:&|\\||<<|>>)",
+                    "name": "keyword.operator.binary.ms"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "begin": "/\\*",
+                    "beginCaptures": {
+                        "0": { "name": "punctuation.definition.comment.begin.ms" }
+                    },
+                    "end": "\\*/",
+                    "endCaptures": {
+                        "0": { "name": "punctuation.definition.comment.end.ms" }
+                    },
+                    "name": "comment.block.ms",
+                    "patterns": [
+                        {
+                            "match": "[\\s\\S]",
+                            "name": "comment.block.content.ms"
+                        }
+                    ]
+                },
+                {
+                    "name": "comment.line.double-slash.ms",
+                    "match": "//.*$"
+                }
+            ]
+        }
+    }
+}

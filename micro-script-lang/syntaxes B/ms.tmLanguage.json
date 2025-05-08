@@ -1,0 +1,261 @@
+{
+    "name": "MicroScript",
+    "scopeName": "source.ms",
+    "fileTypes": [
+        "ms"
+    ],
+    "patterns": [
+        { "include": "#comments" },
+        
+        { "include": "#keywords" },
+        
+        { "include": "#numbers" },
+        { "include": "#booleans" },
+        { "include": "#strings" },
+        { "include": "#multi_char_operators" },
+        { "include": "#compound_operators" },
+        { "include": "#operators" },
+        
+        { "include": "#calling class name in class instantiation" },
+        { "include": "#calling function name" },
+        
+        { "include": "#named parameters in class instantiation" },
+        { "include": "#declaring function parameters" },
+        { "include": "#named parameters in function call" }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "begin": "/\\*",
+                    "end": "\\*/",
+                    "name": "comment.block.ms"
+                },
+                {
+                    "match": "//.*$",
+                    "name": "comment.line.double-slash.ms"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:local|global)(?![a-zA-Z0-9_])",
+                    "name": "storage.modifier.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:end)(?![a-zA-Z0-9_])",
+                    "name": "keyword.control.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:if|elsif|else|then)(?![a-zA-Z0-9_])",
+                    "name": "keyword.control.conditional.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:and|or|not)(?![a-zA-Z0-9_])",
+                    "name": "keyword.operator.logical.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:while|for|to|by|in)(?![a-zA-Z0-9_])",
+                    "name": "keyword.control.loop.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:break|continue|return)(?![a-zA-Z0-9_])",
+                    "name": "keyword.control.flow.ms"
+                },
+                
+                
+                
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:object)(?![a-zA-Z0-9_])",
+                    "name": "storage.type.object.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:class)(?![a-zA-Z0-9_])",
+                    "name": "storage.type.class.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:extends)(?![a-zA-Z0-9_])",
+                    "name": "storage.modifier.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:constructor)(?![a-zA-Z0-9_])",
+                    "name": "entity.name.function.constructor.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:new)(?![a-zA-Z0-9_])",
+                    "name": "keyword.operator.new"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:super)(?![a-zA-Z0-9_])",
+                    "name": "variable.language.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:this)(?![a-zA-Z0-9_])",
+                    "name": "variable.language.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?<=\\d|\\s|^|[^a-zA-Z0-9])(?:do|after|every|sleep)(?![a-zA-Z0-9_])",
+                    "name": "keyword.control.timing.ms"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "(\\d+)(?<![a-zA-Z_]\\d+)",
+                    "name": "constant.numeric.ms"
+                }
+            ]
+        },
+        "booleans": {
+            "patterns": [
+                {
+                    "match": "(?<![a-zA-Z_])(?:true|false)(?![a-zA-Z0-9_])",
+                    "name": "constant.language.boolean.ms"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "beginCaptures": {
+                        "0": { "name": "punctuation.definition.string.begin.ms" }
+                    },
+                    "end": "\"",
+                    "endCaptures": {
+                        "0": { "name": "punctuation.definition.string.end.ms" }
+                    },
+                    "name": "string.quoted.double.ms",
+                    "patterns": [
+                        {
+                            "match": "\\\\.",
+                            "name": "constant.character.escape.ms"
+                        }
+                    ]
+                },
+                {
+                    "begin": "'",
+                    "beginCaptures": {
+                        "0": { "name": "punctuation.definition.string.begin.ms" }
+                    },
+                    "end": "'",
+                    "endCaptures": {
+                        "0": { "name": "punctuation.definition.string.end.ms" }
+                    },
+                    "name": "string.quoted.single.ms",
+                    "patterns": [
+                        {
+                            "match": "\\\\.",
+                            "name": "constant.character.escape.ms"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multi_char_operators": {
+            "patterns": [
+                {
+                    "match": "==|!=|\\<=|\\>=",
+                    "name": "keyword.operator.comparison.ms"
+                },
+                {
+                    "match": "<<|>>",
+                    "name": "keyword.operator.bitwise.ms"
+                }
+            ]
+        },
+        "compound_operators": {
+            "patterns": [
+                {
+                    "match": "\\+=|-=|\\*=|/=|%=",
+                    "name": "keyword.operator.assignment.compound.ms"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "match": "=(?!=)",
+                    "name": "keyword.operator.assignment.ms"
+                },
+                {
+                    "match": "\\+|\\-|\\*(?!\\/)|(?<!\\/)\\/(?!\\/|\\*)|\\%|\\^",
+                    "name": "keyword.operator.arithmetic.ms"
+                },
+                {
+                    "match": "\\<|\\>",
+                    "name": "keyword.operator.comparison.ms"
+                },
+                {
+                    "match": "\\&|\\|",
+                    "name": "keyword.operator.bitwise.ms"
+                }
+            ]
+        },
+        
+        
+        
+        
+        "calling class name in class instantiation": {
+            "patterns": [
+                {
+                    "match": "(?<=new\\s*.*)([a-zA-Z_]+[a-zA-Z0-9_]*\\s*)(?=\\((?:[^()]*)*\\))",
+                    "name": "entity.name.type.class.ms"
+                }
+            ]
+        },
+        
+        
+        
+        
+        
+        "declaring function parameters": {
+            "patterns": [
+                {
+                    "begin": "function\\s*\\(",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "keyword.declaration.function"
+                        }
+                    },
+                    "end": "\\)",
+                    "patterns": [
+                        {
+                            "match": "\\b([a-zA-Z_]+[a-zA-Z0-9_]*)\\b(?=\\s*=)",
+                            "captures": {
+                                "1": {
+                                    "name": "variable.parameter.function-declaration1"
+                                }
+                            }
+                        },
+                        {
+                            "match": "(?<!=\\s*)(\\b([a-zA-Z_]+[a-zA-Z0-9_]*)\\b)(?=\\s*,\\s*)",
+                            "captures": {
+                                "1": {
+                                    "name": "variable.parameter.function-declaration2"
+                                }
+                            }
+                        },
+                        {
+                            "match": "\\s*\\b([a-zA-Z_]+[a-zA-Z0-9_]*)\\b\\s*$",
+                            "captures": {
+                                "1": {
+                                    "name": "variable.parameter.function-declaration3"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+        
+        
+        
+        
+        
+        
+        
+    }
+}

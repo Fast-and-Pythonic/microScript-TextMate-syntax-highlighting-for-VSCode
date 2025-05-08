@@ -1,0 +1,544 @@
+{
+    "name": "MicroScript",
+    "scopeName": "source.ms",
+    "fileTypes": [
+        "ms"
+    ],
+    "patterns": [
+        { "include": "#comments" },
+        
+        { "include": "#keywords" },
+        
+        { "include": "#numbers" },
+        { "include": "#booleans" },
+        { "include": "#strings" },
+        
+        { "include": "#multi_char_operators" },
+        { "include": "#compound_operators" },
+        { "include": "#operators" },
+        
+        { "include": "#create new function name" },
+        { "include": "#create new class name" },
+        
+        { "comment": "declaring function names" },
+        { "include": "#declaring function parameters" },
+        
+        { "comment": "calling function names" },
+        { "include": "#named parameters in function call" },
+        
+        { "comment": "calling class name in class instantiation" },
+        { "include": "#named parameters in class instantiation" }
+        
+        
+        
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "match": "//.*$",
+                    "name": "comment.line.double-slash.ms"
+                },
+                {
+                    "begin": "/\\*",
+                    "end": "\\*/",
+                    "name": "comment.block.ms"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "match": "(?<![a-zA-Z_])(?:local|global)(?![a-zA-Z0-9_])",
+                    "name": "storage.modifier.declaration.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?:end|return)(?![a-zA-Z0-9_])",
+                    "name": "keyword.control.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?:if|elsif|else|then)(?![a-zA-Z0-9_])",
+                    "name": "keyword.control.conditional.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?:and|or|not)(?![a-zA-Z0-9_])",
+                    "name": "keyword.operator.logical.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?:while|for|to|by|in|break|continue)(?![a-zA-Z0-9_])",
+                    "name": "keyword.control.loop.ms"
+                },
+                
+                
+                
+                {
+                    "match": "(?<![a-zA-Z_])(?:object)(?![a-zA-Z0-9_])",
+                    "name": "storage.type.object.ms"
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?:class)(?![a-zA-Z0-9_])",
+                    "name": "meta.class.ms",
+                    "captures": {
+                        "0": { "name": "storage.type.class.ms" }
+                    }
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?:constructor)(?![a-zA-Z0-9_])",
+                    "name": "meta.class.ms meta.method.declaration.ms storage.type.ms",
+                    "captures": {
+                        "0": { "name": "storage.type.constructor.ms" }
+                    }
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?:extends)(?![a-zA-Z0-9_])",
+                    "name": "meta.class.ms meta.definition.class.inherited.classes.ms storage.modifier.ms",
+                    "captures": {
+                        "0": { "name": "storage.modifier.extends.ms" }
+                    }
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?:super)(?![a-zA-Z0-9_])",
+                    "name": "meta.class.ms",
+                    "captures": {
+                        "0": { "name": "variable.language.super.ms" }
+                    }
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?:this)(?![a-zA-Z0-9_])",
+                    "name": "meta.class.ms",
+                    "captures": {
+                        "0": { "name": "variable.language.this.ms" }
+                    }
+                },
+                {
+                    "match": "(?<![a-zA-Z_])(?:new)(?![a-zA-Z0-9_])",
+                    "name": "keyword.control.new.ms"
+                },
+                
+                
+                
+                {
+                    "match": "(?<![a-zA-Z_])(?:do|after|every|sleep)(?![a-zA-Z0-9_])",
+                    "name": "keyword.control.schedule.ms"
+                }
+            ]
+        },
+        
+        
+        
+        "Built-in library": {
+            "patterns": [
+                
+            ]
+        },
+        
+        
+        
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "(\\d+)(?<![a-zA-Z_]+\\d+)",
+                    "name": "constant.numeric.ms"
+                }
+            ]
+        },
+        "booleans": {
+            "patterns": [
+                {
+                    "match": "(?<![a-zA-Z_])(?:true|false)(?![a-zA-Z0-9_])",
+                    "name": "constant.language.boolean.ms"
+                }
+            ]
+        },
+        
+        
+        
+        "strings": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "beginCaptures": { "0": { "name": "punctuation.definition.string.begin.ms" } },
+                    "end": "\"",
+                    "endCaptures": { "0": { "name": "punctuation.definition.string.end.ms" } },
+                    "name": "string.quoted.double.ms",
+                    "patterns": [
+                        {
+                            "match": "\\\\.",
+                            "name": "constant.character.escape.ms"
+                        }
+                    ]
+                },
+                {
+                    "begin": "'",
+                    "beginCaptures": { "0": { "name": "punctuation.definition.string.begin.ms" } },
+                    "end": "'",
+                    "endCaptures": { "0": { "name": "punctuation.definition.string.end.ms" } },
+                    "name": "string.quoted.single.ms",
+                    "patterns": [
+                        {
+                            "match": "\\\\.",
+                            "name": "constant.character.escape.ms"
+                        }
+                    ]
+                }
+            ]
+        },
+        
+        
+        
+        "multi_char_operators": {
+            "patterns": [
+                {
+                    "match": "==|!=|<=|>=",
+                    "name": "keyword.operator.comparison.ms"
+                },
+                {
+                    "match": "<<|>>",
+                    "name": "keyword.operator.bitwise.ms"
+                }
+            ]
+        },
+        "compound_operators": {
+            "patterns": [
+                {
+                    "match": "\\+=|-=|\\*=|/=|%=",
+                    "name": "keyword.operator.assignment.compound.ms"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "match": "(?<!=)=(?!=)",
+                    "name": "keyword.operator.assignment.ms"
+                },
+                {
+                    "match": "\\+|-|\\*|/|%|\\^",
+                    "name": "keyword.operator.arithmetic.ms"
+                },
+                {
+                    "match": "<|>",
+                    "name": "keyword.operator.comparison.ms"
+                },
+                {
+                    "match": "&|\\|",
+                    "name": "keyword.operator.bitwise.ms"
+                }
+            ]
+        },
+        
+        
+        
+        "create new class name": {
+            "patterns": [
+                {
+                    "match": "(?<!new\\s*)(?!\\bclass\\b)([a-zA-Z_]+[a-zA-Z0-9_]*)(?=\\s*=\\s*class)",
+                    "name": "meta.class.ms",
+                    "captures": {
+                        "0": { "name": "entity.name.type.class.ms" }
+                    }
+                }
+            ]
+        },
+        "create new function name": {
+            "patterns": [
+                {
+                    "match": "(?<!new\\s*)(?!\\bfunction\\b)([a-zA-Z_]+[a-zA-Z0-9_]*)(?=\\s*=\\s*function)",
+                    "name": "meta.function.ms meta.definition.function.ms",
+                    "captures": {
+                        "0": { "name": "entity.name.function.ms" }
+                    }
+                }
+            ]
+        },
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        "declaring function parameters": {
+            "patterns": [
+                {
+                    "comment": "declaring function name",
+                    "begin": "(\\bfunction\\b)(?=\\s*\\()",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "keyword.declaration.function"
+                        }
+                    },
+                    "end": "(?<=(function\\s*\\(.*)*)(?<!(?<!function)\\s*\\([^)]*?)(\\))",
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.declaration.function.end"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "match": "\\b([a-zA-Z_]+[a-zA-Z0-9_]*)\\b(?=\\s*\\+=|-=|\\*=|\\/=|%=|=)(?!==)",
+                            "name": "variable.parameter.function-declaration.param="
+                        },
+                        {
+                            "match": "(?<!\\b[a-zA-Z_]+[a-zA-Z0-9_]*\\b\\s*[^a-zA-Z0-9_]+\\s*)(\\b([a-zA-Z_]+[a-zA-Z0-9_]*)\\b)(?=\\s*,.*$)",
+                            "name": "variable.parameter.function-declaration.param,"
+                        },
+                        {
+                            "match": "(?<!\\s*=\\s*)\\b([a-zA-Z_]+[a-zA-Z0-9_]*)\\b(?=\\s*$|\\))",
+                            "name": "variable.parameter.function-declaration.last-param"
+                        },
+                        {
+                            "match": "(?<!^.*[^a-zA-Z0-9_]+\\s*)(\\+=|-=|\\*=|\\/=|%=|=)(?!\\s*-*[^a-zA-Z0-9_'\"]+.*$)",
+                            "name": "keyword.operator.assignment.ms"
+                        },
+                        
+                        {
+                            "match": "(\\d+)(?<![a-zA-Z_]\\d+)",
+                            "name": "constant.numeric.ms"
+                        },
+                        {
+                            "match": "(?<![a-zA-Z_])(?:true|false)(?![a-zA-Z0-9_])",
+                            "name": "constant.language.boolean.ms"
+                        },
+                        {
+                            "patterns": [
+                                {
+                                    "begin": "\"",
+                                    "beginCaptures": {
+                                        "0": {
+                                            "name": "punctuation.definition.string.begin.ms"
+                                        }
+                                    },
+                                    "end": "\"",
+                                    "endCaptures": {
+                                        "0": {
+                                            "name": "punctuation.definition.string.end.ms"
+                                        }
+                                    },
+                                    "name": "string.quoted.double.ms",
+                                    "patterns": [
+                                        {
+                                            "match": "\\\\.",
+                                            "name": "constant.character.escape.ms"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "begin": "'",
+                                    "beginCaptures": {
+                                        "0": {
+                                            "name": "punctuation.definition.string.begin.ms"
+                                        }
+                                    },
+                                    "end": "'",
+                                    "endCaptures": {
+                                        "0": {
+                                            "name": "punctuation.definition.string.end.ms"
+                                        }
+                                    },
+                                    "name": "string.quoted.single.ms",
+                                    "patterns": [
+                                        {
+                                            "match": "\\\\.",
+                                            "name": "constant.character.escape.ms"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        "named parameters in function call": {
+            "patterns": [
+                {
+                    "comment": "calling function name",
+                    "begin": "(?<!^.*new\\s*)(?!^.*\\bfunction\\b)([a-zA-Z_]+[a-zA-Z0-9_]*\\s*)(?=\\()",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "meta.function-call.ms entity.name.function.ms"
+                        }
+                    },
+                    "end": "\\)",
+                    "patterns": [
+                        {
+                            "match": "\\b([a-zA-Z_]+[a-zA-Z0-9_]*)\\b(?=\\s*\\+=|-=|\\*=|\\/=|%=|=)(?!==)",
+                            "name": "variable.parameter.calling-named-param.param="
+                        },
+                        {
+                            "match": "(\\d+)(?<![a-zA-Z_]\\d+)",
+                            "name": "constant.numeric.ms"
+                        },
+                        {
+                            "match": "(?<![a-zA-Z_])(?:true|false)(?![a-zA-Z0-9_])",
+                            "name": "constant.language.boolean.ms"
+                        },
+                        {
+                            "patterns": [
+                                {
+                                    "begin": "\"",
+                                    "beginCaptures": { "0": { "name": "punctuation.definition.string.begin.ms" } },
+                                    "end": "\"",
+                                    "endCaptures": { "0": { "name": "punctuation.definition.string.end.ms" } },
+                                    "name": "string.quoted.double.ms",
+                                    "patterns": [
+                                        {
+                                            "match": "\\\\.",
+                                            "name": "constant.character.escape.ms"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "begin": "'",
+                                    "beginCaptures": {
+                                        "0": {
+                                            "name": "punctuation.definition.string.begin.ms"
+                                        }
+                                    },
+                                    "end": "'",
+                                    "endCaptures": {
+                                        "0": {
+                                            "name": "punctuation.definition.string.end.ms"
+                                        }
+                                    },
+                                    "name": "string.quoted.single.ms",
+                                    "patterns": [
+                                        {
+                                            "match": "\\\\.",
+                                            "name": "constant.character.escape.ms"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "match": "(?<!^.*[^a-zA-Z0-9_]+\\s*)(\\+=|-=|\\*=|\\/=|%=|=)(?!\\s*[^a-zA-Z0-9_'\"]+.*$)",
+                            "name": "keyword.operator.assignment.ms"
+                        }
+                    ]
+                }
+            ]
+        },
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        "named parameters in class instantiation": {
+            "patterns": [
+                {
+                    "comment": "calling class name in class instantiation",
+                    "begin": "(?<=^.*new\\s*)(?!\\bclass\\b)([a-zA-Z_]+[a-zA-Z0-9_]*\\s*)(?=\\()",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "meta.class.ms entity.name.type.class.ms"
+                        }
+                    },
+                    "end": "\\)",
+                    "patterns": [
+                        {
+                            "match": "\\b([a-zA-Z_]+[a-zA-Z0-9_]*)\\b(?=\\s*\\+=|-=|\\*=|\\/=|%=|=)(?!==)",
+                            "name": "variable.parameter.calling-named-param.param="
+                        },
+                        {
+                            "match": "(?<!^.*[^a-zA-Z0-9_]+\\s*)(\\+=|-=|\\*=|\\/=|%=|=)(?!\\s*-*[^a-zA-Z0-9_'\"]+.*$)",
+                            "name": "keyword.operator.assignment.ms"
+                        },
+                        {
+                            "match": "(\\d+)(?<![a-zA-Z_]\\d+)",
+                            "name": "constant.numeric.ms"
+                        },
+                        {
+                            "match": "(?<![a-zA-Z_])(?:true|false)(?![a-zA-Z0-9_])",
+                            "name": "constant.language.boolean.ms"
+                        },
+                        {
+                            "patterns": [
+                                {
+                                    "begin": "\"",
+                                    "beginCaptures": { "0": { "name": "punctuation.definition.string.begin.ms" } },
+                                    "end": "\"",
+                                    "endCaptures": { "0": { "name": "punctuation.definition.string.end.ms" } },
+                                    "name": "string.quoted.double.ms",
+                                    "patterns": [
+                                        {
+                                            "match": "\\\\.",
+                                            "name": "constant.character.escape.ms"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "begin": "'",
+                                    "beginCaptures": {
+                                        "0": {
+                                            "name": "punctuation.definition.string.begin.ms"
+                                        }
+                                    },
+                                    "end": "'",
+                                    "endCaptures": {
+                                        "0": {
+                                            "name": "punctuation.definition.string.end.ms"
+                                        }
+                                    },
+                                    "name": "string.quoted.single.ms",
+                                    "patterns": [
+                                        {
+                                            "match": "\\\\.",
+                                            "name": "constant.character.escape.ms"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
