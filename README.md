@@ -38,8 +38,13 @@ Added code highlighting for:
 - In brackets of functions and classes:
   - Named parameters
   - and all the other stuff (comments, keywords, math operators, numbers, booleans, strings)
+  - arguments ARE NOT HIGHLIGHTED
 
 - Variable names ARE NOT HIGHLIGHTED
+
+---
+
+<summary>Click to expand spoiler</summary>
 
 ---
 
