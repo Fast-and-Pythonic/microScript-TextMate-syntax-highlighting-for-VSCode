@@ -45,13 +45,13 @@ Added code highlighting for:
 ---
 
 
-<details> <summary>Click to expand spoiler</summary>
-
-
-![Снимок экрана 2025-05-08 142932](https://github.com/user-attachments/assets/6e35718d-a507-4e4c-9ccc-9f9cc5add41e)
+<details> <summary>Screenshots with examples of highlighting microScript code</summary>
 
 
 ![Снимок экрана 2025-05-08 135415](https://github.com/user-attachments/assets/73552560-0c1b-45c3-800d-2a40bdee0ae7)
+
+
+![Снимок экрана 2025-05-08 142932](https://github.com/user-attachments/assets/6e35718d-a507-4e4c-9ccc-9f9cc5add41e)
 
 
 ![Снимок экрана 2025-05-08 140005](https://github.com/user-attachments/assets/e144e7b2-8550-44fa-8fa1-f6bd761bf7ae)
@@ -83,7 +83,7 @@ Added code highlighting for:
 
 ---
 
-I plan to add a few more pieces in the future. For example, highlighting functions (and possibly object names) of the microScript standard library.
+I plan to add a few more pieces in the future. For example, highlighting the tools of the microScript standard library. Functions, object names, and more.
 
 
 
