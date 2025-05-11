@@ -17,7 +17,7 @@ Added code highlighting for:
   - and, or, not
   - while, for, to, by, in, break, continue
   
-  - object, class, constructor, extends, super, this, new
+  - function, object, class, constructor, extends, super, this, new
   
   - do, after, every, sleep
 
