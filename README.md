@@ -1,12 +1,24 @@
 This is an extension of SYNTAX highlighting according to the TextMate standard for microScript language, for VS Code. It's syntactic. NOT SEMANTIC.
 
-To install the extension, just put the “micro-script-lang” folder in the “.vscode\extensions” directory. And restart VS Code.
+<details> <summary>To install the extension:</summary>
+
+- 1 - Put the “microScript-syntax-highlighting” folder in the “.vscode\extensions” directory.
+
+- 2 - Enter the command ">Developer: Install Extension from Location...".
+
+- 3 - Select the folder “microScript-syntax-highlighting".
+
+- 4 - And after installing the extension, restart VS Code.
+
+</details>
+
+### My custom code theme, based on "ACE Tomorrow Night Bright". It is specially optimized for microScript syntax. ###
 
 In the file "ms-color (ACE Tomorrow Night Bright)-like.jsonc" there is a custom analogue of the standard code color theme from microStudio. Just transfer the code from this file to your "settings.json" file. This custom code color theme is better designed to highlight the syntax of microScript than the standard code color themes.
 
 ---
 
-Added code highlighting for:
+### Added code highlighting for: ###
 
 - Comments
 
@@ -45,7 +57,7 @@ Added code highlighting for:
 ---
 
 
-<details> <summary>Screenshots with examples of highlighting microScript code</summary>
+<details> <summary> Screenshots with examples of highlighting microScript code</summary>
 
 
 ![Снимок экрана 2025-05-08 135415](https://github.com/user-attachments/assets/73552560-0c1b-45c3-800d-2a40bdee0ae7)
@@ -83,7 +95,19 @@ Added code highlighting for:
 
 ---
 
-I plan to add a few more pieces in the future. For example, highlighting the tools of the microScript standard library. Functions, object names, and more.
+### I plan to add a few more pieces in the future: ###
+- Highlighting the tools of the microScript standard library - Functions, System Classes, and etc...
+- Add some missing keywords.
+- I'll try to post the extensions on VS Code Marketplace. To make them easier to install.
+- Also, I will most likely make 2 versions of the extension:
+  - 1 - My own microScript code highlighting color theme, based on the “Tomorrow Night Bright” theme.
+  - 2 - An almost complete analog of the standard “Tomorrow Night Bright” theme from the Ace editor in microStudio.
+
+
+
+
+
+
 
 
 
