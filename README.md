@@ -16,6 +16,8 @@ This is an extension of SYNTAX highlighting according to the TextMate standard f
 
 In the file "ms-color (ACE Tomorrow Night Bright)-like.jsonc" there is a custom analogue of the standard code color theme from microStudio. Just transfer the code from this file to your "settings.json" file. This custom code color theme is better designed to highlight the syntax of microScript than the standard code color themes.
 
+The extension is based on the TextMate standard. Many editors support the TextMate standard. Therefore, this highlight can be ported to other editors.
+
 ---
 
 ### Added code highlighting for: ###
@@ -91,7 +93,6 @@ In the file "ms-color (ACE Tomorrow Night Bright)-like.jsonc" there is a custom 
 
 
 </details>
-
 
 ---
 
