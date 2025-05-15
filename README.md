@@ -97,8 +97,8 @@ The extension is based on the TextMate standard. Many editors support the TextMa
 ---
 
 ### I plan to add a few more pieces in the future: ###
-- Highlighting the tools of the microScript standard library - Functions, System Classes, and etc...
 - Add some missing keywords.
+- Highlighting the tools of the microScript standard library - Functions, System Classes, and etc...
 - I'll try to post the extensions on VS Code Marketplace. To make them easier to install.
 - Also, I will most likely make 2 versions of the extension:
   - 1 - My own microScript code highlighting color theme, based on the “Tomorrow Night Bright” theme.
